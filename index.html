@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#713d50" />
+  <title>Bốc thăm Hội thi Cắm hoa nghệ thuật 20/11 - THCS Quỳnh Phú 1</title>
+</head>
+<body>
+  <div id="app">
+    <header class="hero">
+      <div class="eyebrow">TRƯỜNG THCS QUỲNH PHÚ 1</div>
+      <h1>HỘI THI CẮM HOA NGHỆ THUẬT</h1>
+      <p class="subtitle">CHÀO MỪNG NGÀY NHÀ GIÁO VIỆT NAM</p>
+      <div class="date">20 · 11</div>
+      <div class="hero-rule"></div>
+      <h2>BỐC THĂM THỨ TỰ THAM GIA</h2>
+      <p class="hero-note">Tôn sư trọng đạo · Tri ân thầy cô</p>
+    </header>
+
+    <main class="container">
+      <div id="setup-warning" class="notice hidden"></div>
+      <section class="stats">
+        <article><strong id="total-count">28</strong><span>Tổng số lớp</span></article>
+        <article><strong id="drawn-count">0</strong><span>Đã bốc thăm</span></article>
+        <article><strong id="remaining-count">28</strong><span>Chưa bốc thăm</span></article>
+      </section>
+
+      <section class="progress-card">
+        <div class="progress-label"><span>Tiến độ bốc thăm</span><b id="progress-text">0%</b></div>
+        <div class="progress-track"><div id="progress-bar"></div></div>
+      </section>
+
+      <section class="draw-panel">
+        <div class="section-kicker">🌸 KHU VỰC BỐC THĂM 🌸</div>
+        <label for="class-select">Chọn lớp tham gia hội thi</label>
+        <select id="class-select"><option value="">Đang tải danh sách lớp…</option></select>
+
+        <label for="class-code">Mã bốc thăm riêng của lớp</label>
+        <input id="class-code" type="password" autocomplete="off" placeholder="Nhập mã do Ban tổ chức cung cấp" />
+
+        <button id="draw-button" class="primary-button" disabled>🎟 BỐC THĂM NGAY</button>
+        <p class="hint">Mỗi lớp chỉ được bốc thăm một lần. Hãy kiểm tra đúng tên lớp trước khi xác nhận.</p>
+        <div id="result-card" class="result-card hidden" aria-live="polite">
+          <span>KẾT QUẢ BỐC THĂM</span>
+          <strong id="result-class">LỚP 6A</strong>
+          <b id="result-number">SỐ 01</b>
+          <small>Bốc thăm thành công · Kết quả đã được ghi nhận</small>
+        </div>
+        <div id="message" class="message" role="status"></div>
+      </section>
+
+      <section class="results-panel">
+        <div class="results-heading">
+          <div><div class="section-kicker">KẾT QUẢ TRỰC TUYẾN</div><h3>Danh sách thứ tự tham gia</h3></div>
+          <span class="live-pill"><i></i> ĐỒNG BỘ TRỰC TIẾP</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>STT</th><th>Lớp</th><th>Trạng thái</th><th>Thời điểm</th></tr></thead>
+            <tbody id="results-body"><tr><td colspan="4" class="empty">Đang tải kết quả…</td></tr></tbody>
+          </table>
+        </div>
+        <div class="table-actions">
+          <button id="export-button" class="secondary-button">⬇ Xuất CSV</button>
+          <button id="print-button" class="secondary-button">▤ In danh sách</button>
+        </div>
+      </section>
+
+      <section class="admin-panel">
+        <button id="admin-toggle" class="admin-toggle">⚙ Khu vực quản trị</button>
+        <div id="admin-box" class="admin-box hidden">
+          <div id="admin-login">
+            <h3>Đăng nhập quản trị</h3>
+            <label for="admin-email">Email quản trị</label>
+            <input id="admin-email" type="email" autocomplete="username" placeholder="Email đã được cấp quyền" />
+            <label for="admin-password">Mật khẩu</label>
+            <input id="admin-password" type="password" autocomplete="current-password" placeholder="Mật khẩu quản trị" />
+            <button id="login-button" class="primary-button">ĐĂNG NHẬP</button>
+          </div>
+          <div id="admin-controls" class="hidden">
+            <p class="admin-status">Đã đăng nhập quản trị.</p>
+            <button id="lock-button" class="secondary-button">Khóa / mở hệ thống bốc thăm</button>
+            <button id="reset-button" class="danger-button">Đặt lại toàn bộ kết quả</button>
+            <button id="logout-button" class="secondary-button">Đăng xuất</button>
+          </div>
+          <p class="hint">Chỉ tài khoản được Ban quản trị cấp quyền mới có thể thay đổi trạng thái hệ thống hoặc đặt lại dữ liệu.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <strong>TRƯỜNG THCS QUỲNH PHÚ 1</strong>
+      <span>HỘI THI CẮM HOA NGHỆ THUẬT · 20/11</span>
+    </footer>
+  </div>
+  <script type="module" src="/src.js"></script>
+</body>
+</html>
